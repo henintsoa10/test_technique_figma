@@ -5,7 +5,17 @@ export default function Hero() {
 	const { ref: ctaRef, visible: ctaVisible } = useReveal()
 	return (
 		<>
-			<div ref={statsRef} className={`flex items-start self-stretch mb-[140px] ml-[58px] mr-24 ${revealClass(statsVisible, 'up')}`}>
+			<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 px-6 md:px-[58px] pt-24 md:pt-28 mb-12 pointer-events-none">
+				<h1 className="text-white text-5xl sm:text-6xl lg:text-8xl leading-[0.95] max-w-[568px] font-normal text-balance">
+					Votre piscine sur mesure
+				</h1>
+				<p className="text-white text-sm sm:text-base leading-relaxed max-w-[279px] md:mt-12">
+					Entre Piscinelle et Compass Pools haut de gamme africain, tropical luxe,
+					unique sur le marché ivoirien. Pas une piscine française génériques. Une
+					ambiance villa luxe Abidjan.
+				</p>
+			</div>
+			<div ref={statsRef} className={`flex flex-wrap items-start gap-5 self-stretch mb-[140px] px-6 md:ml-[58px] md:mr-24 ${revealClass(statsVisible, 'up')}`}>
 				<div className="flex flex-col shrink-0 items-start bg-white py-[22px] pl-[11px] pr-[114px] mr-5 rounded-[20px] hover-lift hover-glow">
 					<img
 						src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/t1tnm5rm_expires_30_days.png"

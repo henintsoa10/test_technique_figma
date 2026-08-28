@@ -8,7 +8,7 @@ export default function Header() {
 	}
 	return (
 		<header className="fixed inset-x-0 top-0 z-50 bg-transparent">
-			<div ref={ref} className={`flex justify-between items-center self-stretch py-4 mx-[58px] ${revealClass(visible, 'down')}`}>
+			<div ref={ref} className={`flex justify-between items-center self-stretch gap-3 py-4 px-4 md:px-[58px] ${revealClass(visible, 'down')}`}>
 				<div className="flex shrink-0 items-center gap-2.5">
 					<img
 						src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/cil8hnkl_expires_30_days.png"
@@ -21,7 +21,7 @@ export default function Header() {
 						alt=""
 					/>
 				</div>
-				<div className="flex shrink-0 items-center bg-[#FFFFFF3B] py-[7px] px-10 rounded-[180px] border border-solid border-white">
+				<div className="hidden md:flex shrink-0 items-center bg-[#FFFFFF3B] py-[7px] px-10 rounded-[180px] border border-solid border-white">
 					<div className="flex shrink-0 items-center mr-[21px] gap-[17px]">
 						<a href="#a-propos" className="text-white text-sm no-underline transition-colors duration-200 hover:text-[#009EFC]" onClick={(e) => handleClick(e, 'a-propos')}>
 							A propos
@@ -45,21 +45,11 @@ export default function Header() {
 					</div>
 				</div>
 				<button
-					className="flex flex-col shrink-0 items-start bg-[#FFFFFF6E] text-left py-2 px-[26px] rounded-[180px] border-0 hover-grow"
+					className="flex shrink-0 items-center bg-[#FFFFFF6E] text-left py-2 px-4 md:px-[26px] rounded-[180px] border-0 hover-grow"
 					onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
 				>
 					<span className="text-white text-base">contact</span>
 				</button>
-			</div>
-			<div className="flex items-start justify-between mx-[58px] mt-3 pointer-events-none">
-				<h1 className="text-white text-6xl lg:text-8xl leading-tight w-[568px] font-normal">
-					Votre piscine sur mesure
-				</h1>
-				<p className="text-white text-base leading-relaxed w-[279px] mt-12">
-					Entre Piscinelle et Compass Pools haut de gamme africain, tropical luxe,
-					unique sur le marché ivoirien. Pas une piscine française génériques. Une
-					ambiance villa luxe Abidjan.
-				</p>
 			</div>
 	</header>
 	)
