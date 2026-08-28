@@ -1,30 +1,29 @@
 import { useReveal, revealClass } from '../hooks/useReveal'
 
 export default function Hero() {
-	const { ref, visible } = useReveal()
 	const { ref: statsRef, visible: statsVisible } = useReveal()
 	const { ref: ctaRef, visible: ctaVisible } = useReveal()
 	return (
 		<>
-			<div ref={ref} className={`flex justify-between items-start self-stretch mb-[63px] mx-[58px] ${revealClass(visible, 'up')}`}>
-				<span className="text-white text-8xl w-[568px]">
+			<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 px-6 md:px-[58px] pt-24 md:pt-28 mb-12 pointer-events-none">
+				<h1 className="text-white text-5xl sm:text-6xl lg:text-8xl leading-[0.95] max-w-[568px] font-normal text-balance">
 					Votre piscine sur mesure
-				</span>
-				<div className="flex flex-col items-start w-[279px] mt-12 gap-[50px]">
-					<span className="text-white text-base">
+				</h1>
+				<div className="flex flex-col items-start gap-6 max-w-[279px] md:mt-12 pointer-events-auto">
+					<p className="text-white text-sm sm:text-base leading-relaxed">
 						Entre Piscinelle et Compass Pools haut de gamme africain, tropical luxe,
 						unique sur le marché ivoirien. Pas une piscine française génériques. Une
 						ambiance villa luxe Abidjan.
-					</span>
+					</p>
 					<button
-						className="flex flex-col items-start bg-[#009EFC] text-left py-2 px-[27px] rounded-[180px] border border-solid border-[#FFFFFF78] hover-grow"
+						className="bg-[#009EFC] text-white text-base py-2 px-7 rounded-[180px] border border-white/50 hover-grow"
 						onClick={() => alert('Pressed!')}
 					>
-						<span className="text-white text-base">Estimer</span>
+						Estimer
 					</button>
 				</div>
 			</div>
-			<div ref={statsRef} className={`flex items-start self-stretch mb-[140px] ml-[58px] mr-24 ${revealClass(statsVisible, 'up')}`}>
+			<div ref={statsRef} className={`flex flex-wrap items-start gap-5 self-stretch mb-[140px] px-6 md:ml-[58px] md:mr-24 ${revealClass(statsVisible, 'up')}`}>
 				<div className="flex flex-col shrink-0 items-start bg-white py-[22px] pl-[11px] pr-[114px] mr-5 rounded-[20px] hover-lift hover-glow">
 					<img
 						src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/t1tnm5rm_expires_30_days.png"
