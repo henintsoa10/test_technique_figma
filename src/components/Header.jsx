@@ -51,7 +51,6 @@ export default function Header() {
 					<span className="text-white text-base">contact</span>
 				</button>
 			</div>
-		</div>
 	</header>
 	)
 }
