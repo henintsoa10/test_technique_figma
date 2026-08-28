@@ -7,7 +7,7 @@ export default function Header() {
 		document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' })
 	}
 	return (
-		<div className="sticky top-0 z-50 bg-transparent">
+		<header className="fixed inset-x-0 top-0 z-50 bg-transparent">
 			<div ref={ref} className={`flex justify-between items-center self-stretch py-4 mx-[58px] ${revealClass(visible, 'down')}`}>
 				<div className="flex shrink-0 items-center gap-2.5">
 					<img
@@ -52,5 +52,6 @@ export default function Header() {
 				</button>
 			</div>
 		</div>
+	</header>
 	)
 }
