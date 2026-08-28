@@ -51,6 +51,16 @@ export default function Header() {
 					<span className="text-white text-base">contact</span>
 				</button>
 			</div>
+			<div className="flex items-start justify-between mx-[58px] mt-3 pointer-events-none">
+				<h1 className="text-white text-6xl lg:text-8xl leading-tight w-[568px] font-normal">
+					Votre piscine sur mesure
+				</h1>
+				<p className="text-white text-base leading-relaxed w-[279px] mt-12">
+					Entre Piscinelle et Compass Pools haut de gamme africain, tropical luxe,
+					unique sur le marché ivoirien. Pas une piscine française génériques. Une
+					ambiance villa luxe Abidjan.
+				</p>
+			</div>
 	</header>
 	)
 }

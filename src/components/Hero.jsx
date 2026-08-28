@@ -1,29 +1,10 @@
 import { useReveal, revealClass } from '../hooks/useReveal'
 
 export default function Hero() {
-	const { ref, visible } = useReveal()
 	const { ref: statsRef, visible: statsVisible } = useReveal()
 	const { ref: ctaRef, visible: ctaVisible } = useReveal()
 	return (
 		<>
-			<div ref={ref} className={`flex justify-between items-start self-stretch mb-[63px] mx-[58px] ${revealClass(visible, 'up')}`}>
-				<span className="text-white text-8xl w-[568px]">
-					Votre piscine sur mesure
-				</span>
-				<div className="flex flex-col items-start w-[279px] mt-12 gap-[50px]">
-					<span className="text-white text-base">
-						Entre Piscinelle et Compass Pools haut de gamme africain, tropical luxe,
-						unique sur le marché ivoirien. Pas une piscine française génériques. Une
-						ambiance villa luxe Abidjan.
-					</span>
-					<button
-						className="flex flex-col items-start bg-[#009EFC] text-left py-2 px-[27px] rounded-[180px] border border-solid border-[#FFFFFF78] hover-grow"
-						onClick={() => alert('Pressed!')}
-					>
-						<span className="text-white text-base">Estimer</span>
-					</button>
-				</div>
-			</div>
 			<div ref={statsRef} className={`flex items-start self-stretch mb-[140px] ml-[58px] mr-24 ${revealClass(statsVisible, 'up')}`}>
 				<div className="flex flex-col shrink-0 items-start bg-white py-[22px] pl-[11px] pr-[114px] mr-5 rounded-[20px] hover-lift hover-glow">
 					<img
