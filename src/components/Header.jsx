@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useReveal, revealClass } from '../hooks/useReveal'
 
 export default function Header() {
-	const { ref, visible } = useReveal()
 	const [onLightBackground, setOnLightBackground] = useState(false)
 
 	useEffect(() => {
@@ -26,7 +24,7 @@ export default function Header() {
 	const goHome = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 	return (
 		<header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${headerSurface}`}>
-			<div ref={ref} className={`flex justify-between items-center self-stretch gap-3 py-4 px-4 md:px-[58px] ${revealClass(visible, 'down')}`}>
+			<div className="flex justify-between items-center self-stretch gap-3 py-4 px-4 md:px-[58px]">
 				<div className="flex shrink-0 items-center gap-2.5">
 					<img
 						src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/cil8hnkl_expires_30_days.png"
@@ -68,7 +66,7 @@ export default function Header() {
 					className={`flex shrink-0 items-center text-left py-2 px-4 md:px-[26px] rounded-[180px] border-0 hover-grow ${onLightBackground ? 'bg-black text-white' : 'bg-[#FFFFFF6E] text-white'}`}
 					onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
 				>
-					<span className="text-white text-base">contact</span>
+					<span className={onLightBackground ? 'text-white text-base' : 'text-white text-base'}>contact</span>
 				</button>
 			</div>
 	</header>
