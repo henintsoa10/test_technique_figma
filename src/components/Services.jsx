@@ -7,7 +7,7 @@ export default function Services() {
 	const { ref: r3, visible: v3 } = useReveal()
 	return (
 		<>
-			<div ref={ref} className={`flex flex-col items-center self-stretch mb-[117px] ${revealClass(visible, 'up')}`}>
+			<div id="services" ref={ref} className={`flex flex-col items-center self-stretch mb-[117px] ${revealClass(visible, 'up')}`}>
 				<span className="text-[#1E1E1E] text-[40px] text-center w-[710px]">
 					Nous concevons, construisons et entretenons des piscines modernes, durables
 					et sur mesure

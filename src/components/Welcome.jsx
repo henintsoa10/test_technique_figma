@@ -6,7 +6,7 @@ export default function Welcome() {
 	const { ref: cardRef, visible: cardVisible } = useReveal()
 	return (
 		<>
-			<div ref={ref} className={`flex justify-between items-start self-stretch mb-[165px] mx-[84px] ${revealClass(visible, 'up')}`}>
+			<div id="a-propos" ref={ref} className={`flex justify-between items-start self-stretch mb-[165px] mx-[84px] ${revealClass(visible, 'up')}`}>
 				<span className="text-[#1E1E1E] text-base w-[371px] mt-[15px]">
 					Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class
 					aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
