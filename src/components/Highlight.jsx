@@ -1,13 +1,18 @@
+import { useReveal, revealClass } from '../hooks/useReveal'
+
 export default function Highlight() {
+	const { ref, visible } = useReveal()
+	const { ref: cardRef, visible: cardVisible } = useReveal()
+	const { ref: imgRef, visible: imgVisible } = useReveal()
 	return (
 		<>
 			<div className="self-stretch bg-[#0000004D] h-[1px] mb-[101px] mx-[58px]"></div>
-			<div className="flex justify-between items-start self-stretch mb-[55px] mx-[58px]">
+			<div ref={ref} className={`flex justify-between items-start self-stretch mb-[55px] mx-[58px] ${revealClass(visible, 'up')}`}>
 				<span className="text-[#1E1E1E] text-4xl w-[538px]">
 					Torem ipsum dolor sit amet, consectetur adipiscing libero et velit
 					interdum.
 				</span>
-				<div className="flex flex-col items-start bg-[#009EFC] w-[447px] pt-[26px] px-[26px] rounded-[10px]">
+				<div ref={cardRef} className={`flex flex-col items-start bg-[#009EFC] w-[447px] pt-[26px] px-[26px] rounded-[10px] hover-lift hover-glow ${revealClass(cardVisible, 'right')}`}>
 					<div className="flex items-center mb-[15px] gap-[23px]">
 						<img
 							src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/3jdinz1a_expires_30_days.png"
@@ -24,17 +29,21 @@ export default function Highlight() {
 					</span>
 				</div>
 			</div>
-			<div className="flex items-start self-stretch mb-[138px] ml-[58px] mr-[169px]">
-				<img
-					src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/8y6m5g4r_expires_30_days.png"
-					className="w-[272px] h-[238px] mr-5 rounded-[10px] object-fill"
-					alt=""
-				/>
-				<img
-					src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/abhe6pnw_expires_30_days.png"
-					className="w-[272px] h-[238px] rounded-[10px] object-fill"
-					alt=""
-				/>
+			<div ref={imgRef} className={`flex items-start self-stretch mb-[138px] ml-[58px] mr-[169px] ${revealClass(imgVisible, 'up')}`}>
+				<div className="hover-img-zoom w-[272px] h-[238px] mr-5 rounded-[10px]">
+					<img
+						src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/8y6m5g4r_expires_30_days.png"
+						className="w-[272px] h-[238px] rounded-[10px] object-fill"
+						alt=""
+					/>
+				</div>
+				<div className="hover-img-zoom w-[272px] h-[238px] rounded-[10px]">
+					<img
+						src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/abhe6pnw_expires_30_days.png"
+						className="w-[272px] h-[238px] rounded-[10px] object-fill"
+						alt=""
+					/>
+				</div>
 				<div className="flex-1 self-stretch"></div>
 				<div className="flex flex-col shrink-0 items-start mt-[151px] gap-[23px]">
 					<span className="text-[#1E1E1E] text-base font-bold mr-[180px]">

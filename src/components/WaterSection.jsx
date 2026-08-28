@@ -1,12 +1,17 @@
+import { useReveal, revealClass } from '../hooks/useReveal'
+
 export default function WaterSection() {
+	const { ref, visible } = useReveal()
+	const { ref: cardsRef, visible: cardsVisible } = useReveal()
+	const { ref: ctaRef, visible: ctaVisible } = useReveal()
 	return (
 		<>
-			<div className="flex flex-col items-start self-stretch bg-[url('https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/dgqikyqf_expires_30_days.png')] bg-[length:100%_100%] py-[138px] pr-[59px] mb-[133px] mx-[58px] rounded-[45px]">
+			<div ref={ref} className={`flex flex-col items-start self-stretch bg-[url('https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/dgqikyqf_expires_30_days.png')] bg-[length:100%_100%] py-[138px] pr-[59px] mb-[133px] mx-[58px] rounded-[45px] ${revealClass(visible, 'up')}`}>
 				<span className="text-white text-[64px] w-[706px] mb-60 ml-[59px]">
 					Eau azurée contrastant avec le ciel ivoirien
 				</span>
-				<div className="flex items-start self-stretch ml-[59px]">
-					<div className="flex flex-1 flex-col items-start bg-white pt-7 mr-[19px] rounded-[30px]">
+				<div ref={cardsRef} className={`flex items-start self-stretch ml-[59px] ${revealClass(cardsVisible, 'up')}`}>
+					<div className="flex flex-1 flex-col items-start bg-white pt-7 mr-[19px] rounded-[30px] hover-lift">
 						<div className="flex flex-col items-center relative mb-9 ml-8">
 							<img
 								src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/o6envb3o_expires_30_days.png"
@@ -25,18 +30,18 @@ export default function WaterSection() {
 									alt=""
 								/>
 								<span className="text-[#1E1E1E] text-[32px] w-[314px]">
-									Conception d’espaces aquatiques élégants et lumineux
+									Conception d'espaces aquatiques élégants et lumineux
 								</span>
 							</div>
 						</div>
 						<button
-							className="flex flex-col items-start bg-[#009EFC] text-left py-4 px-8 mb-[60px] ml-8 rounded-[10px] border border-solid border-[#FFFFFF78]"
+							className="flex flex-col items-start bg-[#009EFC] text-left py-4 px-8 mb-[60px] ml-8 rounded-[10px] border border-solid border-[#FFFFFF78] hover-grow"
 							onClick={() => alert('Pressed!')}
 						>
 							<span className="text-white text-base">fAIRE UNE ESTIMATION</span>
 						</button>
 					</div>
-					<div className="flex flex-1 flex-col items-start bg-white relative pt-[29px] px-[29px] mt-[130px] mr-5 rounded-[30px]">
+					<div className="flex flex-1 flex-col items-start bg-white relative pt-[29px] px-[29px] mt-[130px] mr-5 rounded-[30px] hover-lift">
 						<div className="flex flex-col items-start self-stretch mb-[53px] gap-[29px]">
 							<img
 								src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/udgkfbg3_expires_30_days.png"
@@ -44,7 +49,7 @@ export default function WaterSection() {
 								alt=""
 							/>
 							<span className="text-[#1E1E1E] text-[32px] ml-1.5">
-								Installation d’équipements premium pour piscines modernes
+								Installation d'équipements premium pour piscines modernes
 							</span>
 						</div>
 						<img
@@ -58,7 +63,7 @@ export default function WaterSection() {
 							alt=""
 						/>
 					</div>
-					<div className="flex flex-1 flex-col items-start bg-white relative pt-[29px] px-[29px] mt-[130px] rounded-[30px]">
+					<div className="flex flex-1 flex-col items-start bg-white relative pt-[29px] px-[29px] mt-[130px] rounded-[30px] hover-lift">
 						<div className="flex flex-col items-start self-stretch mb-[53px] gap-[29px]">
 							<img
 								src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/s5pdb6fs_expires_30_days.png"
@@ -94,12 +99,12 @@ export default function WaterSection() {
 					himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
 				</span>
 			</div>
-			<div className="flex flex-col items-center self-stretch mb-[254px]">
+			<div ref={ctaRef} className={`flex flex-col items-center self-stretch mb-[254px] ${revealClass(ctaVisible, 'scale')}`}>
 				<div className="flex flex-col items-start bg-[url('https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/qxcefaav_expires_30_days.png')] bg-[length:100%_100%] py-64 px-[396px] rounded-[30px]">
 					<div className="flex flex-col items-center">
 						<img
 							src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/jd3xtg0k_expires_30_days.png"
-							className="w-[60px] h-[60px] object-fill"
+							className="w-[60px] h-[60px] object-fill animate-float"
 							alt=""
 						/>
 					</div>

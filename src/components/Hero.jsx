@@ -1,7 +1,12 @@
+import { useReveal, revealClass } from '../hooks/useReveal'
+
 export default function Hero() {
+	const { ref, visible } = useReveal()
+	const { ref: statsRef, visible: statsVisible } = useReveal()
+	const { ref: ctaRef, visible: ctaVisible } = useReveal()
 	return (
 		<>
-			<div className="flex justify-between items-start self-stretch mb-[63px] mx-[58px]">
+			<div ref={ref} className={`flex justify-between items-start self-stretch mb-[63px] mx-[58px] ${revealClass(visible, 'up')}`}>
 				<span className="text-white text-8xl w-[568px]">
 					Votre piscine sur mesure
 				</span>
@@ -12,15 +17,15 @@ export default function Hero() {
 						ambiance villa luxe Abidjan.
 					</span>
 					<button
-						className="flex flex-col items-start bg-[#009EFC] text-left py-2 px-[27px] rounded-[180px] border border-solid border-[#FFFFFF78]"
+						className="flex flex-col items-start bg-[#009EFC] text-left py-2 px-[27px] rounded-[180px] border border-solid border-[#FFFFFF78] hover-grow"
 						onClick={() => alert('Pressed!')}
 					>
 						<span className="text-white text-base">Estimer</span>
 					</button>
 				</div>
 			</div>
-			<div className="flex items-start self-stretch mb-[140px] ml-[58px] mr-24">
-				<div className="flex flex-col shrink-0 items-start bg-white py-[22px] pl-[11px] pr-[114px] mr-5 rounded-[20px]">
+			<div ref={statsRef} className={`flex items-start self-stretch mb-[140px] ml-[58px] mr-24 ${revealClass(statsVisible, 'up')}`}>
+				<div className="flex flex-col shrink-0 items-start bg-white py-[22px] pl-[11px] pr-[114px] mr-5 rounded-[20px] hover-lift hover-glow">
 					<img
 						src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/t1tnm5rm_expires_30_days.png"
 						className="w-7 h-[31px] mb-[65px] object-fill"
@@ -29,7 +34,7 @@ export default function Hero() {
 					<span className="text-[#009EFC] text-5xl mb-3">+435</span>
 					<span className="text-[#009EFC] text-base">Lorem Ipsum</span>
 				</div>
-				<div className="flex flex-col items-start bg-black w-[230px] pt-3 pl-[13px] pr-[19px] rounded-[20px] border border-solid border-white">
+				<div className="flex flex-col items-start bg-black w-[230px] pt-3 pl-[13px] pr-[19px] rounded-[20px] border border-solid border-white hover-lift">
 					<div className="flex justify-between items-center self-stretch mb-[69px]">
 						<span className="text-white text-sm w-[100px]">
 							Sit amet Dolor Sit
@@ -46,7 +51,7 @@ export default function Hero() {
 					<span className="text-white text-base mb-[26px]">Lorem Ipsum</span>
 				</div>
 				<div className="flex-1 self-stretch"></div>
-				<div className="flex flex-col shrink-0 items-start bg-[#FFFFFF1A] py-1.5 pl-2 pr-[23px] mt-[182px] rounded-[180px]">
+				<div ref={ctaRef} className={`flex flex-col shrink-0 items-start bg-[#FFFFFF1A] py-1.5 pl-2 pr-[23px] mt-[182px] rounded-[180px] ${revealClass(ctaVisible, 'left')}`}>
 					<div className="flex items-center relative">
 						<img
 							src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/ck9xvjqp_expires_30_days.png"

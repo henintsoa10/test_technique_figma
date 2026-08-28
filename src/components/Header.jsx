@@ -1,6 +1,9 @@
+import { useReveal, revealClass } from '../hooks/useReveal'
+
 export default function Header() {
+	const { ref, visible } = useReveal()
 	return (
-		<div className="flex justify-between items-center self-stretch mb-[91px] mx-[58px]">
+		<div ref={ref} className={`flex justify-between items-center self-stretch mb-[91px] mx-[58px] ${revealClass(visible, 'down')}`}>
 			<div className="flex shrink-0 items-center gap-2.5">
 				<img
 					src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/uE5ydZUhPK/cil8hnkl_expires_30_days.png"
@@ -15,10 +18,10 @@ export default function Header() {
 			</div>
 			<div className="flex shrink-0 items-center bg-[#FFFFFF3B] py-[7px] px-10 rounded-[180px] border border-solid border-white">
 				<div className="flex shrink-0 items-center mr-[21px] gap-[17px]">
-					<a href="#a-propos" className="text-white text-sm no-underline">
+					<a href="#a-propos" className="text-white text-sm no-underline transition-colors duration-200 hover:text-[#009EFC]">
 						A propos
 					</a>
-					<a href="#services" className="text-white text-sm no-underline">
+					<a href="#services" className="text-white text-sm no-underline transition-colors duration-200 hover:text-[#009EFC]">
 						Nos services
 					</a>
 				</div>
@@ -28,16 +31,16 @@ export default function Header() {
 					alt=""
 				/>
 				<div className="flex shrink-0 items-center gap-[18px]">
-					<a href="#realisations" className="text-white text-sm no-underline">
+					<a href="#realisations" className="text-white text-sm no-underline transition-colors duration-200 hover:text-[#009EFC]">
 						Nos realisations
 					</a>
-					<a href="#faq" className="text-white text-sm no-underline">
+					<a href="#faq" className="text-white text-sm no-underline transition-colors duration-200 hover:text-[#009EFC]">
 						FAQ
 					</a>
 				</div>
 			</div>
 			<button
-				className="flex flex-col shrink-0 items-start bg-[#FFFFFF6E] text-left py-2 px-[26px] rounded-[180px] border-0"
+				className="flex flex-col shrink-0 items-start bg-[#FFFFFF6E] text-left py-2 px-[26px] rounded-[180px] border-0 hover-grow"
 				onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
 			>
 				<span className="text-white text-base">contact</span>
